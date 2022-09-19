@@ -3,22 +3,19 @@
 
 int main()
 {
-    int n,i=1;
+    int n;
     scanf("%d",&n);
-    while(i<=(2*n)-1)
+    for(int i=1;i<=(2*n)-1;i++)
     {
-        int j=1;
-        while(j<=(2*n)-1)
+        for(int j=1;j<=(2*n)-1;j++)
         {
-            if(i>=j&&i+j<=2*n||j>=i&&i+j>=2*n)
+            if(i>j&&i+j>2*n||j>i&&i+j<2*n)
             {
-                printf("*");
+                printf(" ");
             }
-            else printf(" ");
-            j++;
+            else printf("*");
         }
         printf("\n");
-        i++;
     }
     return 0;
 }
