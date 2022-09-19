@@ -5,23 +5,22 @@ int isPrime(int x)
     int j = 0;
     if (x == 0 || x == 1)
         return 0;
-    for(int i=2 ; i<x/2 ; i++)
+    for (int i=2 ; i <= x/2 ; i++)
     {
         if (x % i == 0)
         {
-            j++;
+            j=1;
+            break;
         }
+        if (j == 0)
+            return 1;
     }
-    if (j == 0)
-        return 1;
-    else
-        return 0;
 }
 int main()
 {
     int x;
     scanf("%d", &x);
-    if (isPrime(x) == 1) printf("Prime Number");
-    else printf("Not Prime Number");
+    if (isPrime(x) == 0) printf("Not Prime Number");
+    else printf("Prime Number");
     return 0;
 }
